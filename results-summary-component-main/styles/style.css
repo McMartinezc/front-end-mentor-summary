@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    /*Colors lletres primaris*/
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+    /*Colors background degrats*/
+    --Light-slate-blue: hsl(252, 100%, 67%);
+    --Light-royal-blue: hsl(241, 81%, 54%);
+    /*Color background cercle*/
+    --Violet-blue: hsla(256, 72%, 46%, 1);
+    --Persian-blue: hsla(241, 72%, 46%, 0);
+    /*Colors neutrals*/
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Hanken Grotesk', sans-serif;
+
+    /*centrar la carta en medio de la pantalla*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 35%;
+}
+
+.card__result {
+    background: linear-gradient(to bottom, var(--Light-slate-blue), var(--Light-royal-blue));
+    border-radius: 0 0 25px 25px;
+    color: var(--Pale-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%;
+    /* Establece el mismo ancho máximo que el contenedor principal */
+}
+
+.card__result-cercle {
+    width: 150px;
+    /* Establece el ancho del círculo */
+    height: 150px;
+    /* Establece la altura del círculo */
+    border-radius: 50%;
+    /* Hace que el elemento sea un círculo */
+    background: linear-gradient(to top, var(--Persian-blue), var(--Violet-blue));
+    /* Crea un degradado lineal de arriba hacia abajo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__result-score {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--Pale-blue);
+}
+
+.card__results-total {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--Light-slate-blue);
+}
+
+.card__result-title,
+.card__result-text {
+    color: var(--Light-lavender);
+    font-size: 16px;
+    text-align: center;
+}
+
+.card_summary {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    gap: 15px;
+}
+
+.card_summary_header {
+    display: flex;
+    align-content: center;
+    gap: 10px;
+}
+
+.card_summary-title {
+    color: var(--Dark-gray-blue);
+    margin-bottom: 10px;
+}
+
+.card_summary-memory-title,
+.card_summary-verbal-title,
+.card_summary-visual-title,
+.card_summary-reaction-title {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.card_summary-reaction-score,
+.card_summary-memory-score,
+.card_summary-verbal-score,
+.card_summary-visual-score {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--Dark-gray-blue);
+}
+
+.card_summary-reaction-score span,
+.card_summary-memory-score span,
+.card_summary-verbal-score span,
+.card_summary-visual-score span {
+    color: hsla(224, 30%, 27%, 0.4);
+}
+
+.card_summary-reaction,
+.card_summary-memory,
+.card_summary-verbal,
+.card_summary-visual {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_summary-reaction {
+    background-color: hsla(0, 100%, 67%, 0.1);
+    color: var(--Light-red);
+}
+
+.card_summary-memory {
+    background-color: hsla(39, 100%, 56%, 0.1);
+    color: var(--Orangey-yellow);
+}
+
+.card_summary-verbal {
+    background-color: hsla(166, 100%, 37%, 0.1);
+    color: var(--Green-teal)
+}
+
+.card_summary-visual {
+    background-color: hsla(234, 85%, 45%, 0.1);
+    color: var(--Cobalt-blue);
+}
+
+.button {
+    background-color: var(--Dark-gray-blue);
+    color: var(--Pale-blue);
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 25px;
+    border: none;
+    padding: 20px;
+    width: 100%;
+}
+
+@media (min-width:900px) {
+    .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch; /* Asegura que los hijos ocupen la misma altura verticalmente */
+        max-width: 40%;
+    }
+    .card__result {
+        border-radius: 25px;
+        align-items: center; /* Centra el contenido verticalmente dentro de .card__result */
+    }
+
+}
